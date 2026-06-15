@@ -45,8 +45,11 @@ While employees submit requests using a mobile canvas app, the Contoso facilitie
 
     ![Screenshot of Navigation](media/9444e25f3cc06dcda4d636224bc7a949.png)
 
-1.  Under **Navigation**, select **New Group**.
-1.  On the right side of the screen, expand the **New Group** pane.
+1.  In the **App Designer**, on the left side of the screen, select **Pages**. Under the **Navigation** section, select **New group**.
+
+    ![Screenshot of New group](media/New-group.png)
+
+1.  On the right side of the screen, if not already expanded, expand the **New Group** pane.
 1.  Change the **Title** from **New Group** to **Customers.**
 1.  Select the **three dots** next to the **Customers** group and select **New group**.
 1.  Change the **Title** of the **New Group** to **Facilities**.
