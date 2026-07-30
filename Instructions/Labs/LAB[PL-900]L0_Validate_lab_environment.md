@@ -69,10 +69,22 @@ Applying the latest updates to the browser prevents issues in the next lab when 
 
 ## Exercise 2: Download Room Reservation zip file
 
-1. Open a browser window in your tenant, and enter https://github.com/MicrosoftLearning/PL-900-Microsoft-Power-Platform-Fundamentals/tree/master/Allfiles.
-1. You will see the the following:
+1. Open a browser window in your tenant, and enter `https://github.com/MicrosoftLearning/PL-900-Microsoft-Power-Platform-Fundamentals/tree/master/Allfiles`.
+
+1. The following page displays:
 
     ![Image files.](media/images.png)
 
-1. Download the zip file.
+1. Select `Room Reservations.zip`.
 
+1. Select **Download raw file**.
+
+    ![Download raw file.](media/download-raw-file.png)
+
+1. Open the **Downloads** folder.
+
+1. In the **Downloads** folder, select `Room Reservations.zip`.
+
+1. Right-click and select **Extract all**, then select **Extract**.
+
+1. Confirm the extracted folder contains the `Room Reservations.xlsx` file.
