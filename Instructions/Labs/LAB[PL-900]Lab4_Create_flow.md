@@ -18,12 +18,11 @@ lab:
 
 In this lab, you will learn to:
 
-- Navigate the Power Automate maker experience
-- Create an automated cloud flow triggered by a Dataverse event
-- Add conditions and actions to a flow
-- Send an email notification using a built-in connector
-- Test and monitor a flow
-
+-  Navigate the Power Automate maker experience
+-  Create an automated cloud flow triggered by a Dataverse event
+-  Add conditions and actions to a flow
+-  Send an email notification using a built-in connector
+-  Test and monitor a flow
 ## Scenario
 
 Contoso wants to automatically notify the facilities team whenever a new high-priority facilities request is submitted. You will create an automated cloud flow that triggers when a new row is added to the Facility Request table and sends an email notification if the priority is High or Urgent.
@@ -38,7 +37,7 @@ Contoso wants to automatically notify the facilities team whenever a new high-pr
 
 1. Select **Automated cloud flow**.
 
-    ![Create new Flow](media/ba0e6b83a2ffc2f7e72f595d42b5f04f.png)
+   ![Create new Flow](media/ba0e6b83a2ffc2f7e72f595d42b5f04f.png)
 
 1. Name the flow **Notify on High Priority Request**.
 
@@ -49,6 +48,7 @@ Contoso wants to automatically notify the facilities team whenever a new high-pr
    ![Screenshot showing trigger configuration](media/d47c16506bc5f8a9d20614e431f03e9b.png)
 
 # Exercise 2: Configure the flow
+
 > [!NOTE]
 > It’s possible that your trigger step will say Invalid Parameters, if that is the case, it means that you need to configure a new connection. If your trigger says Invalid Parameters, follow the steps below:
 
@@ -125,10 +125,10 @@ Now that we have our condition, we are going to configure the notification email
 
 1. Select **Sign in** and select the **MOD Administrator** account
 
-    > [!NOTE]
-    > You may need to select the **Sign in** button. *(You may receive a browser had blocked the connection authentication popup window. If so, select the Popup icon in the address bar and choose Always allow pop-ups and redirects from https://make.powerautomate.com)*
+> [!NOTE]
+> You may need to select the **Sign in** button. *(You may receive a browser had blocked the connection authentication popup window. If so, select the Popup icon in the address bar and choose Always allow pop-ups and redirects from https://make.powerautomate.com)*
 
-1. Configure the email:
+4. Configure the email:
     - **To:** Enter your own email address (for testing purposes).
     - **Subject:** Enter `High Priority Facility Request:` and insert the **Request Title** from Dynamic content.
     - **Body:** Enter `A new high-priority facilities request has been submitted.` and add the following fields from **Dynamic content** under **Get a row by ID** on separate lines:
