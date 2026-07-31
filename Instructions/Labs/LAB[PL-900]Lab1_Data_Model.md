@@ -27,10 +27,10 @@ Each lab builds a different part of this solution using a different Power Platfo
 
 Before starting these labs, ensure you have the following:
 
--  A Microsoft 365 account with Power Platform access (a trial environment is acceptable)
--  A Power Platform environment with Dataverse provisioned
--  A modern web browser (Microsoft Edge or Google Chrome recommended)
--  Maker-level permissions in your Power Platform environment
+- A Microsoft 365 account with Power Platform access (a trial environment is acceptable)
+- A Power Platform environment with Dataverse provisioned
+- A modern web browser (Microsoft Edge or Google Chrome recommended)
+- Maker-level permissions in your Power Platform environment
 
 **Estimated Time:** 30 minutes
 
@@ -38,11 +38,11 @@ Before starting these labs, ensure you have the following:
 
 In this lab, you will learn to:
 
--   Navigate the Dataverse environment within the Power Apps Maker portal
--   Create a custom table to store facilities request data
--   Add columns of various data types to the table
--   Create a simple Choice column
--   Enter sample data into your new table
+-  Navigate the Dataverse environment within the Power Apps Maker portal
+-  Create a custom table to store facilities request data
+-  Add columns of various data types to the table
+-  Create a simple Choice column
+-  Enter sample data into your new table
 
 ## Scenario
 
@@ -89,7 +89,7 @@ Next, we will need to create some columns to store information from each request
     - **Display name:** Description
     - **Data Type:** Multiple Lines of Text (Plain Text)
 
-   	![Screenshot showing formatting as Multi Line Text](media/8a3bbc5eacb16419f57788e468a64fcc.png)
+    ![Screenshot showing formatting as Multi Line Text](media/8a3bbc5eacb16419f57788e468a64fcc.png)
 
 1. Expand **Advanced options** and ensure the **Maximum character count** is **2000**.
 
@@ -101,6 +101,7 @@ Next, we will need to create some columns to store information from each request
     - **Display name:** Date Requested
     - **Data Type:** Date and time
     - **Format:** Date Only
+
 1. Expand **Advanced Options** and set **Time Zone adjustment** to **User Local**.
 
     ![Screenshot showing Advanced Date Options](media/38a5e902e3c70c7324af36c9ee610287.png)
@@ -110,7 +111,7 @@ Next, we will need to create some columns to store information from each request
 1. Under **Facility Request columns and data** select the **+** button again.
 
 1. Configure your new column as follows:
-	- **Display name:** Estimated Cost
+    - **Display name:** Estimated Cost
     - **Data Type:** Currency
 
     ![Screenshot showing creating a currency column](media/4427d39adbbe4bbf4fab7d7b982f6c8b.png)
@@ -133,6 +134,7 @@ Next, we will need to create some columns to store information from each request
     - Supplies
     - Room Setup
     - Other
+
 1. Set **Default Choice** to **None**
 
     ![Screenshot showing Choice Column](media/3e25a1f222488af40533dbd0137f54de.png)
@@ -142,8 +144,8 @@ Next, we will need to create some columns to store information from each request
 1. Under **Facility Request columns and data**, select the **+** button again.
 
 1. Configure the **Priority** column as follows:
-    -   **Display name:** Priority
-    -   **Data Type:** Choice (Choice)
+    - **Display name:** Priority
+    - **Data Type:** Choice (Choice)
 
 1. Under **Sync with global choice?**, select **No**.
 
@@ -159,9 +161,9 @@ Next, we will need to create some columns to store information from each request
 > [!NOTE]
 > Power Automate uses these stored integer values when evaluating a choice column. You will use the **High** value (**3**) and **Urgent** value (**4**) in Practice Lab 4.
 
-   ![Screenshot showing the Priority choice labels and values](media/priority-choice-columns-labels.png)
+![Screenshot showing the Priority choice labels and values](media/priority-choice-columns-labels.png)
 
-25.  Set **Default Choice** to **None**, and then select **Save**.
+25. Set **Default Choice** to **None**, and then select **Save**.
 
 1. Repeat the steps used for the **Priority** column to add the **Status** choice column. Use the labels **New**, **In Progress**, **Completed**, and **Cancelled**, and set **Default Choice** to **New**.
 
@@ -173,13 +175,13 @@ Next, we are going to add some sample data so when we build apps from the tables
 
 1. Select **Edit**, then select **+ New row** (or select the first empty row) and enter the following sample records:
 
-| **Request Title**                | **Category** | **Priority** | **Status**  |
-|----------------------------------|--------------|--------------|-------------|
-| Broken printer in Room 201       | Equipment    | High         | New         |
-| Order paper supplies for Floor 3 | Supplies     | Low          | New         |
-| Conference room setup for Monday | Room Setup   | Medium       | In Progress |
+    | **Request Title**                | **Category** | **Priority** | **Status**  |
+    |----------------------------------|--------------|--------------|-------------|
+    | Broken printer in Room 201       | Equipment    | High         | New         |
+    | Order paper supplies for Floor 3 | Supplies     | Low          | New         |
+    | Conference room setup for Monday | Room Setup   | Medium       | In Progress |
 
-3. Fill in reasonable values for the **Description**, **Date Requested**, and **Estimated Cost** columns for each record.
+1. Fill in reasonable values for the **Description**, **Date Requested**, and **Estimated Cost** columns for each record.
 
 1. After entering all records, verify your data appears correctly in the grid view.
 
@@ -201,18 +203,18 @@ There are many ways that you can build tables in Dataverse. In addition to the m
     ![Screenshot showing renaming a table](media/f43bbdbb9e05fe968b5f6cd301ad6b46.png)
 
 1. Next, we are going to rename the **New Column** to **Room Name**.
-   - In the Copilot pane, enter the text: `Rename New Column in the Room table to Room Name`.
+    - In the Copilot pane, enter the text: `Rename New Column in the Room table to Room Name`.
 
-Next, we need to add some additional new columns to the table:
+    Next, we need to add some additional new columns to the table:
 
-| **Column Display Name** | **Data Type** |
-|-------------------------|---------------|
-| Campus                  | Text          |
-| Building                | Text          |
-| Floor                   | Text          |
-| Conference Room         | Yes/No        |
+    | **Column Display Name** | **Data Type** |
+    |-------------------------|---------------|
+    | Campus                  | Text          |
+    | Building                | Text          |
+    | Floor                   | Text          |
+    | Conference Room         | Yes/No        |
 
-5. In the **Copilot** pane, add the text columns listed above.
+1. In the **Copilot** pane, add the text columns listed above.
     - Enter the text: `Add new columns named Campus, Building, and Floor to the room table.`
 
     ![Screenshot showing using Copilot to Add items](media/712f56af13c331924442a04dce14cddb.png)
@@ -225,15 +227,15 @@ Next, we need to add some additional new columns to the table:
 
     ![Screenshot showing a completed Room table.](media/16a509f2184ec41488ab59fbc124847f.png)
 
-Now that your table is created, add the following sample data to your table:
+    Now that your table is created, add the following sample data to your table:
 
-| **Room** | **Campus** | **Building**  | **Floor** | **Conference Room** |
-|----------|------------|---------------|-----------|---------------------|
-| 301 A    | North      | HighPoint     | 3         | Yes                 |
-| 233      | South      | Seirra        | 2         | No                  |
-| 401 B    | East       | Jacobson      | 4         | Yes                 |
+    | **Room** | **Campus** | **Building**  | **Floor** | **Conference Room** |
+    |----------|------------|---------------|-----------|---------------------|
+    | 301 A    | North      | HighPoint     | 3         | Yes                 |
+    | 233      | South      | Seirra        | 2         | No                  |
+    | 401 B    | East       | Jacobson      | 4         | Yes                 |
 
-8. Select the **Save and exit** button to create your new Room table.
+1. Select the **Save and exit** button to create your new Room table.
 
 1. In the **Done working?** dialog, select **Save and exit**.
 
