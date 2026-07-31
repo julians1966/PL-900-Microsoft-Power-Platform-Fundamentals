@@ -18,69 +18,69 @@ lab:
 
 In this lab, you will learn to:
 
--   Navigate the Power Automate maker experience
--   Create an automated cloud flow triggered by a Dataverse event
--   Add conditions and actions to a flow
--   Send an email notification using a built-in connector
--   Test and monitor a flow
+-  Navigate the Power Automate maker experience
+-  Create an automated cloud flow triggered by a Dataverse event
+-  Add conditions and actions to a flow
+-  Send an email notification using a built-in connector
+-  Test and monitor a flow
 
 ## Scenario
 
 Contoso wants to automatically notify the facilities team whenever a new high-priority facilities request is submitted. You will create an automated cloud flow that triggers when a new row is added to the Facility Request table and sends an email notification if the priority is High or Urgent.
 
-## Exercise 1: Create an automated cloud flow
+# Exercise 1: Create an automated cloud flow
 
-1.  In a new Browser window, navigate to <https://make.powerautomate.com> (or select Power Automate from the app launcher) and sign in.
+1. In a new Browser window, navigate to <https://make.powerautomate.com> (or select Power Automate from the app launcher) and sign in.
 
-1.  Change the Environment from **Contoso (default)** to **Dev One**
+1. Change the Environment from **Contoso (default)** to **Dev One**
 
-1.  Select **+ Create** from the left navigation.
+1. Select **+ Create** from the left navigation.
 
-1.  Select **Automated cloud flow**.
+1. Select **Automated cloud flow**.
 
-    ![Create new Flow](media/ba0e6b83a2ffc2f7e72f595d42b5f04f.png)
+   ![Create new Flow](media/ba0e6b83a2ffc2f7e72f595d42b5f04f.png)
 
-1.  Name the flow **Notify on High Priority Request**.
+1. Name the flow **Notify on High Priority Request**.
 
-1.  In the trigger search box, search for **"When a row is added"** and select **When a row is added, modified or deleted (Microsoft Dataverse)**.
+1. In the trigger search box, search for **"When a row is added"** and select **When a row is added, modified or deleted (Microsoft Dataverse)**.
 
-1.  Select **Create**.
+1. Select **Create**.
 
-    ![Screenshot showing trigger configuration](media/d47c16506bc5f8a9d20614e431f03e9b.png)
+   ![Screenshot showing trigger configuration](media/d47c16506bc5f8a9d20614e431f03e9b.png)
 
-## Exercise 2: Configure the flow
+# Exercise 2: Configure the flow
 
 > [!NOTE]
 > It’s possible that your trigger step will say Invalid Parameters, if that is the case, it means that you need to configure a new connection. If your trigger says Invalid Parameters, follow the steps below:
 
 ## Task 1: Configure the trigger
 
-1.  Select the **when a row is added, modified, or deleted** trigger.
+1. Select the **when a row is added, modified, or deleted** trigger.
 
-1.  In the **Parameters** pane, select **Change connection reference.**
+1. In the **Parameters** pane, select **Change connection reference.**
 
-    ![Screenshot showing changing the connection](media/8975ac740e75136572207db551e66e13.png)
+   ![Screenshot showing changing the connection](media/8975ac740e75136572207db551e66e13.png)
 
-1.  Select **Add New**.
+1. Select **Add New**.
 
-1.  Configure the connection as follows:
-    -   **Connection name:** Dataverse
-    -   **Authentication Type:** Oauth
+1. Configure the connection as follows:
+    - **Connection name:** Dataverse
+    - **Authentication Type:** Oauth
 
-1.  Select the **Sign in** button.
+1. Select the **Sign in** button.
 
-    ![screenshot showing signing to Dataverse](media/6d4c8fa2fa2b5cab89394b15c0a28e40.png)
+   ![screenshot showing signing to Dataverse](media/6d4c8fa2fa2b5cab89394b15c0a28e40.png)
 
-1.  Select the **MOD Administrator** account.
+1. Select the **MOD Administrator** account.
 
-    Once you have configured the connection reference, we can configure the trigger.
+   Once you have configured the connection reference, we can configure the trigger.
 
-1.  In the trigger step, configure the following settings:
-    -   **Change type:** Select **Added**.
-    -   **Table name:** Select **Facility Requests** (the table you created earlier).
-    -   **Scope:** Select **Organization** (to trigger for all users).
+1. In the trigger step, configure the following settings:
+    - **Change type:** Select **Added**.
+    - **Table name:** Select **Facility Requests** (the table you created earlier).
+    - **Scope:** Select **Organization** (to trigger for all users).
 
-        ![Screenshot showing configuring the Dataverse trigger](media/d94a58dbdd9440493fd10ff2f97479c0.png)
+       ![Screenshot showing configuring the Dataverse trigger](media/d94a58dbdd9440493fd10ff2f97479c0.png)
 
 ## Task 2: Add the Get a row by ID action
 
@@ -89,17 +89,17 @@ Contoso wants to automatically notify the facilities team whenever a new high-pr
 1. Search for `Get a row by ID` and select **Get a row by ID** under **Microsoft Dataverse**.
 
 1. In the **Get a row by ID** step, configure the following settings:
-    -   **Table name:** Select **Facility Requests** (the table you created earlier).
-    -   **Row ID:** In **Dynamic content**, select **Facility Request**.
+    - **Table name:** Select **Facility Requests** (the table you created earlier).
+    - **Row ID:** In **Dynamic content**, select **Facility Request**.
 
-      ![Screenshot showing the Get a row by ID configuration](media/trigger-step.png)
+    ![Screenshot showing the Get a row by ID configuration](media/trigger-step.png)
 
 > [!NOTE]
 > You may need to configure the connection for the **Get a row by ID** action. If so, select **Change connection reference**, select the existing connection or select **Add new** and sign in with the **MOD Administrator** account.
 
 ## Task 3: Configure the priority condition
 
-1.  In the **Copilot** pane on the right, enter the following command: `Add a condition to see if the Priority is equal to high`.
+1. In the **Copilot** pane on the right, enter the following command: `Add a condition to see if the Priority is equal to high`.
 
     We only want to send a notification for high-priority requests. Add a condition to check the priority value.
 
@@ -141,16 +141,18 @@ Contoso wants to automatically notify the facilities team whenever a new high-pr
 
         ![Screenshot showing Configured email](media/77924a98504e3df64c1bb6a8031437a6.png)
 
-1.  Leave the If **False/No** branch empty (no action needed for non-high-priority requests).
+1. Leave the If **False/No** branch empty (no action needed for non-high-priority requests).
 
-## Exercise 3: Save and test
+# Exercise 3: Save and test
 
-1.  Select **Save** in the upper right.
+## Task 1: Save and test the flow
 
-1.  Test the flow:
+1. Select **Save** in the upper right.
+
+1. Test the flow:
     -  Open your **Facility Request** table (in make.powerapps.com \> **Tables** or through the model-driven app).
     -  Add a new row with **Priority** set to **High**.
     -  Return to Power Automate, select **My flows**, and then in the **28-day run history** section, verify the flow ran successfully.
     -  Check your email inbox for the **notification**.
 
-1.  If the flow did not trigger or failed, select the run entry to see step-by-step details and identify where the error occurred. Select **Resubmit** to rerun the flow.
+1. If the flow did not trigger or failed, select the run entry to see step-by-step details and identify where the error occurred. Select **Resubmit** to rerun the flow.
