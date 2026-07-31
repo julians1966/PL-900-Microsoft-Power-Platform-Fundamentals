@@ -73,7 +73,7 @@ Next, we will need to create some columns to store information from each request
 | Date Requested          | Date Only              | Behavior: User Local                                           |
 | Estimated Cost          | Currency               | Leave defaults                                                 |
 | Category                | Choice                 | Choices: Maintenance, Equipment, Supplies, Room Setup, Other   |
-| Priority                | Choice                 | Choices: Low, Medium, High, Urgent                             |
+| Priority                | Choice                 | Choices: Low (1), Medium (2), High (3), Urgent (4)                             |
 | Status                  | Choice                 | Choices: New, In Progress, Completed, Cancelled (Default: New) |
 
 1.  Ensure that your **Facility Request** table is open in the maker portal.
@@ -120,12 +120,27 @@ Next, we will need to create some columns to store information from each request
     ![Screenshot showing Choice Column](media/3e25a1f222488af40533dbd0137f54de.png)
 
 1.  Select the **Save** button.
-1.  Repeat steps 13 – 20 to add the following choice columns with values:
+1.  Under **Facility Request columns and data**, select the **+** button again.
+1.  Configure the **Priority** column as follows:
+    -   **Display name:** Priority
+    -   **Data Type:** Choice (Choice)
+1.  Under **Sync with global choice?**, select **No**.
+1.  Under **Choices**, set the following labels and values:
 
-| **Column Display Name** | **Data Type** | **Additional Settings**                                        |
-|-------------------------|---------------|----------------------------------------------------------------|
-| Priority                | Choice        | Choices: Low, Medium, High, Urgent                             |
-| Status                  | Choice        | Choices: New, In Progress, Completed, Cancelled (Default: New) |
+    | **Label** | **Value** |
+    |-----------|-----------|
+    | Low       | 1         |
+    | Medium    | 2         |
+    | High      | 3         |
+    | Urgent    | 4         |
+
+    > [!NOTE]
+    > Power Automate uses these stored integer values when evaluating a choice column. You will use the **High** value (**3**) and **Urgent** value (**4**) in Practice Lab 4.
+
+    ![Screenshot showing the Priority choice labels and values](media/priority-choice-columns-labels.png)
+
+1.  Set **Default Choice** to **None**, and then select **Save**.
+1.  Repeat the steps used for the **Priority** column to add the **Status** choice column. Use the labels **New**, **In Progress**, **Completed**, and **Cancelled**, and set **Default Choice** to **New**.
 
 ## Task 3: Enter sample data
 
