@@ -52,16 +52,21 @@ Contoso needs a central place to store facilities request data. You will create 
 
 ## Task 1: Create the Facility Request table
 
-1.  Navigate to <https://make.powerapps.com> and sign in with the credentials provided (*Available from the Resources tab of your lab environment. Use* **Administrative Username** *and* **Administrative Password**).
-1.  Ensure you are in the correct environment (**Dev One**) by checking the Environment picker in the upper-right corner of the screen.
-1.  In the left navigation pane, select **Tables**.
-1.  Select **+ New table** drop down, and from the menu that appears choose **Table (advanced properties)**
-1.  In the table **Properties** panel, set the **Display name** to **Facility Request**. (Note: The plural name will auto-populate.)
-1.  Select the **Primary Column** tab, and set the **Display name** to **Request Title**
+1. Navigate to <https://make.powerapps.com> and sign in with the credentials provided (*Available from the Resources tab of your lab environment. Use* **Administrative Username** *and* **Administrative Password**).
+
+1. Ensure you are in the correct environment (**Dev One**) by checking the Environment picker in the upper-right corner of the screen.
+
+1. In the left navigation pane, select **Tables**.
+
+1. Select **+ New table** drop down, and from the menu that appears choose **Table (advanced properties)**
+
+1. In the table **Properties** panel, set the **Display name** to **Facility Request**. (Note: The plural name will auto-populate.)
+
+1. Select the **Primary Column** tab, and set the **Display name** to **Request Title**
 
     ![New Table Screen](media/4054a73fdf8eba3bb76e50bf2345b338.png)
 
-1.  Select the **Save** button to create your new table.
+1. Select the **Save** button to create your new table.
 
 ## Task 2: Add columns to the table
 
@@ -76,56 +81,73 @@ Next, we will need to create some columns to store information from each request
 | Priority                | Choice                 | Choices: Low (1), Medium (2), High (3), Urgent (4)                             |
 | Status                  | Choice                 | Choices: New, In Progress, Completed, Cancelled (Default: New) |
 
-1.  Ensure that your **Facility Request** table is open in the maker portal.
-1.  Under **Facility Request columns and data** select the **+** button.
-1.  Configure your new column as follows:
+1. Ensure that your **Facility Request** table is open in the maker portal.
+
+1. Under **Facility Request columns and data** select the **+** button.
+
+1. Configure your new column as follows:
     - **Display name:** Description
     - **Data Type:** Multiple Lines of Text (Plain Text)
 
    	![Screenshot showing formatting as Multi Line Text](media/8a3bbc5eacb16419f57788e468a64fcc.png)
 
-1.  Expand **Advanced options** and ensure the **Maximum character count** is **2000**.
-1.  Select the **Save** button.
-1.  Under **Facility Request columns and data** select the **+** button again.
-1.  Configure your new column as follows:
+1. Expand **Advanced options** and ensure the **Maximum character count** is **2000**.
+
+1. Select the **Save** button.
+
+1. Under **Facility Request columns and data** select the **+** button again.
+
+1. Configure your new column as follows:
     - **Display name:** Date Requested
     - **Data Type:** Date and time
     - **Format:** Date Only
-1.  Expand **Advanced Options** and set **Time Zone adjustment** to **User Local**.
+1. Expand **Advanced Options** and set **Time Zone adjustment** to **User Local**.
 
     ![Screenshot showing Advanced Date Options](media/38a5e902e3c70c7324af36c9ee610287.png)
 
-1.  Select the **Save** button.
-1.  Under **Facility Request columns and data** select the **+** button again.
-1.  Configure your new column as follows:
+1. Select the **Save** button.
+
+1. Under **Facility Request columns and data** select the **+** button again.
+
+1. Configure your new column as follows:
 	- **Display name:** Estimated Cost
     - **Data Type:** Currency
 
     ![Screenshot showing creating a currency column](media/4427d39adbbe4bbf4fab7d7b982f6c8b.png)
 
-1.  Select the **Save** button.
-1.  Under **Facility Request columns and data** select the **+** button again.
-1.  Configure your new column as follows:
+1. Select the **Save** button.
+
+1. Under **Facility Request columns and data** select the **+** button again.
+
+1. Configure your new column as follows:
     - **Display name:** Category
     - **Data Type:** Choice (Choice)
-1.  Under **Sync with global choice?**, select **No**.
-1.  Under **Choices**, set the **Label** to **Maintenance**.
-1.  Select **+ New Choice** and set the label to **Equipment**.
-1.  Repeat the last step until you have added the following labels:
+
+1. Under **Sync with global choice?**, select **No**.
+
+1. Under **Choices**, set the **Label** to **Maintenance**.
+
+1. Select **+ New Choice** and set the label to **Equipment**.
+
+1. Repeat the last step until you have added the following labels:
     - Supplies
     - Room Setup
     - Other
-1.  Set **Default Choice** to **None**
+1. Set **Default Choice** to **None**
 
     ![Screenshot showing Choice Column](media/3e25a1f222488af40533dbd0137f54de.png)
 
-1.  Select the **Save** button.
-1.  Under **Facility Request columns and data**, select the **+** button again.
-1.  Configure the **Priority** column as follows:
+1. Select the **Save** button.
+
+1. Under **Facility Request columns and data**, select the **+** button again.
+
+1. Configure the **Priority** column as follows:
     -   **Display name:** Priority
     -   **Data Type:** Choice (Choice)
-1.  Under **Sync with global choice?**, select **No**.
-1.  Under **Choices**, set the following labels and values:
+
+1. Under **Sync with global choice?**, select **No**.
+
+1. Under **Choices**, set the following labels and values:
 
     | **Label** | **Value** |
     |-----------|-----------|
@@ -134,12 +156,12 @@ Next, we will need to create some columns to store information from each request
     | High      | 3         |
     | Urgent    | 4         |
 
-    > [!NOTE]
-    > Power Automate uses these stored integer values when evaluating a choice column. You will use the **High** value (**3**) and **Urgent** value (**4**) in Practice Lab 4.
+> [!NOTE]
+> Power Automate uses these stored integer values when evaluating a choice column. You will use the **High** value (**3**) and **Urgent** value (**4**) in Practice Lab 4.
 
     ![Screenshot showing the Priority choice labels and values](media/priority-choice-columns-labels.png)
 
-1.  Set **Default Choice** to **None**, and then select **Save**.
+25.  Set **Default Choice** to **None**, and then select **Save**.
 
 1.  Repeat the steps used for the **Priority** column to add the **Status** choice column. Use the labels **New**, **In Progress**, **Completed**, and **Cancelled**, and set **Default Choice** to **New**.
 
@@ -148,6 +170,7 @@ Next, we will need to create some columns to store information from each request
 Next, we are going to add some sample data so when we build apps from the tables, there will be data to display.
 
 1. Ensure that you still have the Facility Request table editor open.
+
 1. Select **Edit**, then select **+ New row** (or select the first empty row) and enter the following sample records:
 
 | **Request Title**                | **Category** | **Priority** | **Status**  |
@@ -156,7 +179,7 @@ Next, we are going to add some sample data so when we build apps from the tables
 | Order paper supplies for Floor 3 | Supplies     | Low          | New         |
 | Conference room setup for Monday | Room Setup   | Medium       | In Progress |
 
-1.  Fill in reasonable values for the **Description**, **Date Requested**, and **Estimated Cost** columns for each record.
+3. Fill in reasonable values for the **Description**, **Date Requested**, and **Estimated Cost** columns for each record.
 1.  After entering all records, verify your data appears correctly in the grid view.
 
 # Exercise 2: Build a data model with Copilot assistance
@@ -186,12 +209,12 @@ Next, we need to add some additional new columns to the table:
 | Floor                   | Text          |
 | Conference Room         | Yes/No        |
 
-5.  In the **Copilot** pane, add the text columns listed above.
+5. In the **Copilot** pane, add the text columns listed above.
     - Enter the text: `Add new columns named Campus, Building, and Floor to the room table.`
 
     ![Screenshot showing using Copilot to Add items](media/712f56af13c331924442a04dce14cddb.png)
 
-1.  In the **Copilot** pane, add the **Conference Room** **Yes/No** column.
+1. In the **Copilot** pane, add the **Conference Room** **Yes/No** column.
     
     - Enter the text: `Add a new yes/no column named Conference Room to the Room table`
 
@@ -216,18 +239,22 @@ Now that your table is created, add the following sample data to your table:
 
 Next, we are going to add a lookup column to the Facility Request table, that will allow you to select a room from the Rooms table.
 
-1.  In the left navigation pane, select **Tables**.
-1.  Select **All**, and in the **Search** field, enter `Facility`.
-1.  Open the **Facility Request** Table
-1.  Under **Schema**, select **Columns**
-1.  Select **+ New Column**, and configure as follows:
+1. In the left navigation pane, select **Tables**.
+
+1. Select **All**, and in the **Search** field, enter `Facility`.
+
+1. Open the **Facility Request** Table
+
+1. Under **Schema**, select **Columns**
+
+1. Select **+ New Column**, and configure as follows:
     - **Display Name:** Room    
     - **Data Type**: Lookup
     - **Related Table:** Room
 
-        ![Screenshot showing a new column.](media/598a2ef98951783cd5f79e363286b725.png)
+    ![Screenshot showing a new column.](media/598a2ef98951783cd5f79e363286b725.png)
 
-1.  Select the **Save** button.
+1. Select the **Save** button.
 
 
 
