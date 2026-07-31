@@ -27,10 +27,10 @@ Each lab builds a different part of this solution using a different Power Platfo
 
 Before starting these labs, ensure you have the following:
 
--   A Microsoft 365 account with Power Platform access (a trial environment is acceptable)
--   A Power Platform environment with Dataverse provisioned
--   A modern web browser (Microsoft Edge or Google Chrome recommended)
--   Maker-level permissions in your Power Platform environment
+-  A Microsoft 365 account with Power Platform access (a trial environment is acceptable)
+-  A Power Platform environment with Dataverse provisioned
+-  A modern web browser (Microsoft Edge or Google Chrome recommended)
+-  Maker-level permissions in your Power Platform environment
 
 **Estimated Time:** 30 minutes
 
@@ -159,11 +159,11 @@ Next, we will need to create some columns to store information from each request
 > [!NOTE]
 > Power Automate uses these stored integer values when evaluating a choice column. You will use the **High** value (**3**) and **Urgent** value (**4**) in Practice Lab 4.
 
-    ![Screenshot showing the Priority choice labels and values](media/priority-choice-columns-labels.png)
+   ![Screenshot showing the Priority choice labels and values](media/priority-choice-columns-labels.png)
 
 25.  Set **Default Choice** to **None**, and then select **Save**.
 
-1.  Repeat the steps used for the **Priority** column to add the **Status** choice column. Use the labels **New**, **In Progress**, **Completed**, and **Cancelled**, and set **Default Choice** to **New**.
+1. Repeat the steps used for the **Priority** column to add the **Status** choice column. Use the labels **New**, **In Progress**, **Completed**, and **Cancelled**, and set **Default Choice** to **New**.
 
 ## Task 3: Enter sample data
 
@@ -180,7 +180,8 @@ Next, we are going to add some sample data so when we build apps from the tables
 | Conference room setup for Monday | Room Setup   | Medium       | In Progress |
 
 3. Fill in reasonable values for the **Description**, **Date Requested**, and **Estimated Cost** columns for each record.
-1.  After entering all records, verify your data appears correctly in the grid view.
+
+1. After entering all records, verify your data appears correctly in the grid view.
 
 # Exercise 2: Build a data model with Copilot assistance
 
@@ -191,9 +192,11 @@ There are many ways that you can build tables in Dataverse. In addition to the m
 
 ## Task 1: Create the Room table
 
-1.  In the left navigation pane, select **Tables**.
-1.  Under **Tables**, select **Start with a blank table**.
-1.  Change the name of the table from **Table1** to **Room**.
+1. In the left navigation pane, select **Tables**.
+
+1. Under **Tables**, select **Start with a blank table**.
+
+1. Change the name of the table from **Table1** to **Room**.
 
     ![Screenshot showing renaming a table](media/f43bbdbb9e05fe968b5f6cd301ad6b46.png)
 
@@ -218,7 +221,7 @@ Next, we need to add some additional new columns to the table:
     
     - Enter the text: `Add a new yes/no column named Conference Room to the Room table`
 
-1.  Your completed **Room** table will resemble the image below:
+1. Your completed **Room** table will resemble the image below:
 
     ![Screenshot showing a completed Room table.](media/16a509f2184ec41488ab59fbc124847f.png)
 
@@ -233,7 +236,6 @@ Now that your table is created, add the following sample data to your table:
 8. Select the **Save and exit** button to create your new Room table.
 
 1. In the **Done working?** dialog, select **Save and exit**.
-
 
 ## Task 2: Create a Room Lookup field in the Facility Request table.
 
