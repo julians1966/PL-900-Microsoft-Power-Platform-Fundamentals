@@ -142,6 +142,10 @@ Next, we will need to create some columns to store information from each request
 1.  Set **Default Choice** to **None**, and then select **Save**.
 1.  Repeat the steps used for the **Priority** column to add the **Status** choice column. Use the labels **New**, **In Progress**, **Completed**, and **Cancelled**, and set **Default Choice** to **New**.
 
+ **Column Display Name** | **Data Type** | **Additional Settings**                                        |
+|-------------------------|---------------|----------------------------------------------------------------|
+| Status                  | Choice        | Choices: New, In Progress, Completed, Cancelled (Default: New) |
+
 ## Task 3: Enter sample data
 
 Next, we are going to add some sample data so when we build apps from the tables, there will be data to display.
